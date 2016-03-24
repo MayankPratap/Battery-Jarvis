@@ -1,8 +1,8 @@
 import os,time
 
-charge_now_file="/sys/class/power_supply/BAT0/charge_now"
-charge_full_file="/sys/class/power_supply/BAT0/charge_full"
-charge_status_file="/sys/class/power_supply/BAT0/status"
+charge_now_file="/sys/class/power_supply/BAT1/charge_now"
+charge_full_file="/sys/class/power_supply/BAT1/charge_full"
+charge_status_file="/sys/class/power_supply/BAT1/status"
 
 charge_now=open(charge_now_file)
 charge_full=open(charge_full_file)
