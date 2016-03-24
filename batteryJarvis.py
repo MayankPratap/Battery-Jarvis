@@ -1,4 +1,6 @@
 import os,time
+import getpass
+from subprocess import call
 
 charge_now_file="/sys/class/power_supply/BAT1/charge_now"
 charge_full_file="/sys/class/power_supply/BAT1/charge_full"
@@ -16,15 +18,25 @@ num=int(charge_now_content)*1.0
 den=int(charge_full_content)*1.0
 
 res=num/den*100
+manku=getpass.getuser()
+
 
 if res<=15 and charge_status_content!="Charging":
-    os.system("espeak 'Hey,Mayank please charge me.'")
+	speech ="hey "+manku+" please charge me."
+	call(["espeak",speech])
 
-elif res==100 and charge_status_content=="Charging":
-    os.system("espeak 'Please dont overcharge me.'")
+elif res==100.0 and charge_status_content!="Discharging":
+	speech ="hey "+manku+" Please dont overcharge me."
+	call(["espeak",speech])
 
+elif charge_status_content!=Discharging:
+	speech ="hey "+manku+" Don't woory i am ok"
+	call(["espeak",speech])
 
-   
+else:
+	speech ="hey "+manku+" cool"
+	call(["espeak",speech])
+
 
 
 
