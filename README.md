@@ -17,7 +17,7 @@ To schedule our script to run at regular interval we can use cronjobs in linux.
 
 2) Now at the end of this file add the following line:- 
        
-  */10 * * * * DISPLAY=:0 gnome-terminal -x sh -c "python2 path/to/batteryJarvis.py;"
+  */10  *  *  *  *  DISPLAY=:0  gnome-terminal  -x  sh  -c  "python2 path/to/batteryJarvis.py;"
   
 3) Save and close the file.
 
