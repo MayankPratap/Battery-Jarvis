@@ -18,7 +18,7 @@ den=int(charge_full_content)*1.0
 res=num/den*100
 
 if res<=15 and charge_status_content!="Charging":
-    os.system("espeak 'Hey,Mayank please charge me.'")
+    os.system("espeak 'Hey,please charge me.'")
 
 elif res==100 and charge_status_content=="Charging":
     os.system("espeak 'Please dont overcharge me.'")
