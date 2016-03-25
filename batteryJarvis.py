@@ -1,10 +1,23 @@
 import os,time
+import subprocess
 import getpass
+import commands
+
 from subprocess import call
 
-charge_now_file="/sys/class/power_supply/BAT1/charge_now"
-charge_full_file="/sys/class/power_supply/BAT1/charge_full"
-charge_status_file="/sys/class/power_supply/BAT1/status"
+coutput=commands.getstatusoutput("find /sys/class/power_supply/BAT*")
+#print coutput
+
+cpath=coutput[1]
+
+folder=os.path.basename(cpath)  # contains BAT0 or BAT1 accordingly
+
+#print folder
+
+charge_now_file="/sys/class/power_supply/"+folder+"/charge_now"
+charge_full_file="/sys/class/power_supply/"+folder+"/charge_full"
+charge_status_file="/sys/class/power_supply/"+folder+"/status"
+
 
 charge_now=open(charge_now_file)
 charge_full=open(charge_full_file)
