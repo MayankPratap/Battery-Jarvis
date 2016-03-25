@@ -20,7 +20,7 @@ res=num/den*100
 if res<=15 and charge_status_content!="Charging":
     os.system("espeak 'Hey,please charge me.'")
 
-elif res==100 and charge_status_content=="Charging":
+elif res==100 and charge_status_content=="Full":
     os.system("espeak 'Please dont overcharge me.'")
 
 
