@@ -6,7 +6,8 @@ import commands
 
 from subprocess import call
 
-coutput=commands.getstatusoutput("find / -type d -name BAT* 2> /dev/null")
+coutput=commands.getstatusoutput("find /sys/class/power_supply/BAT*")
+#print coutput
 
 cpath=coutput[1]
 
